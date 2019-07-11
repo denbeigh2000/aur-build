@@ -1,14 +1,16 @@
-# Build AUR packages on Docker.
+# aur-build
+>Build AUR packages on Docker.
 
+Available on [Docker Hub](https://hub.docker.com/r/denbeigh2000/aur-build)
 
 ## Quickstart
 ```
-docker build -t denbeigh2000/arch-docker .
+docker pull denbeigh2000/aur-build
 mkdir -p out && chmod 777 out
 docker run --rm \
-    -v out:/out \
+    -v "$(pwd)/out:/out" \
     -e PKG_NAME=my-aur-package \
-    denbeigh2000/arch-docker
+    denbeigh2000/aur-build
 ```
 
 ## What is this?
