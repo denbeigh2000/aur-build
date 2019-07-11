@@ -1,1 +1,1 @@
-bob ALL=(ALL) NOPASSWD:ALL
+bob ALL=(ALL) NOPASSWD:/usr/bin/pacman
