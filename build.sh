@@ -20,7 +20,7 @@ TARBALL_URL="https://aur.archlinux.org/cgit/aur.git/snapshot/${TARBALL}"
 wget "$TARBALL_URL"
 tar zxvf "$TARBALL"
 cd "${PKG_NAME}"
-sed -i -E "s/^(\s*)make(\s+|$)/\1make -j${CONCURRENCY}\2/" PKGBUILD
+sed -i -E "s/^(\s*)(make|cmake --build)(\b|\s|$)/\1\2 -j${CONCURRENCY}\3/" PKGBUILD
 
 makepkg --noconfirm -s
 cp ./*.tar.xz "$OUT_DIR/"
