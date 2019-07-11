@@ -1,10 +1,12 @@
 FROM archlinux/base
 
-RUN pacman --noconfirm --quiet --needed -Sy base-devel tar wget grep
+RUN pacman --noconfirm --quiet -Syu
+RUN pacman --noconfirm --quiet --needed -S base-devel tar grep wget
+RUN rm -f /var/cache/pacman/pkg/*
 
 RUN useradd bob
 RUN mkdir -p /home/bob/build /out
-RUN chown -R bob /home/bob/build /out
+RUN chown -R bob /home/bob /out
 
 USER bob
 
