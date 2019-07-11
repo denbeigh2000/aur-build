@@ -1,8 +1,8 @@
 #!/bin/bash -ex
 
-OUT_DIR="/tmp/asset-dir"
 # PKG_NAME="ungoogled-chromium"
 CONCURRENCY="$(nproc)"
+OUT_DIR="/out"
 
 wget "https://aur.archlinux.org/cgit/aur.git/snapshot/${PKG_NAME}.tar.gz"
 tar zxvf "${PKG_NAME}.tar.gz"

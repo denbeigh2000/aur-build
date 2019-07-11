@@ -3,8 +3,8 @@ FROM archlinux/base
 RUN pacman --noconfirm --quiet --needed -Sy base-devel tar wget grep
 
 RUN useradd bob
-RUN mkdir -p /home/bob/build
-RUN chown -R bob /home/bob/build
+RUN mkdir -p /home/bob/build /out
+RUN chown -R bob /home/bob/build /out
 
 USER bob
 

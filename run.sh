@@ -21,6 +21,6 @@ chmod 777 "$OUT_DIR"
 docker build -t "$IMAGE_NAME" .
 docker run \
     --name "$CONTAINER_NAME" \
-    -v "$OUT_DIR":/tmp/asset-dir \
+    -v "$OUT_DIR":/out \
     -e "PKG_NAME=$PKG_NAME" \
     "$IMAGE_NAME"
